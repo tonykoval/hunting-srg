@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hunting Strongly Regular Graphs — A Series of Three Hunt Logs</title>
+<meta name="description" content="Three open questions about strongly regular graphs — SRG(37,18,8,9), SRG(69,20,7,5) and Conway's SRG(99,14,1,2) — three shapes of one problem.">
+<meta name="author" content="Tony Koval">
+<link rel="stylesheet" href="assets/book.css">
+<link rel="stylesheet" href="assets/print.css" media="print">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+</head>
+<body>
+
+<div class="book-title-string">Hunting Strongly Regular Graphs</div>
+
+<div class="book-shell">
+
+<nav class="nav-sidebar" aria-label="The series">
+    <h2>The Series</h2>
+    <ol>
+        <li><a href="https://tonykoval.github.io/hunting-srg37/">SRG(37,18,8,9)</a></li>
+        <li><a href="https://tonykoval.github.io/hunting-srg69/">SRG(69,20,7,5)</a></li>
+        <li><a href="https://tonykoval.github.io/hunting-srg99/">SRG(99,14,1,2)</a></li>
+    </ol>
+    <h2>Source</h2>
+    <ol>
+        <li><a href="https://github.com/tonykoval/hunting-srg37">hunting-srg37</a></li>
+        <li><a href="https://github.com/tonykoval/hunting-srg69">hunting-srg69</a></li>
+        <li><a href="https://github.com/tonykoval/hunting-srg99">hunting-srg99</a></li>
+        <li><a href="https://github.com/tonykoval/orbit-gen">orbit-gen (engine)</a></li>
+    </ol>
+</nav>
+
+<main class="chapter" role="main">
+
+<h1 class="chapter-title">
+    <span class="chapter-number">A Series of Three Hunt Logs</span>
+    Hunting Strongly Regular Graphs
+</h1>
+
+<p class="lead">
+A <em>strongly regular graph</em> is one of the most rigid objects in
+combinatorics: $n$ vertices, every vertex of degree $k$, every edge in
+$\lambda$ triangles, every non-edge with $\mu$ common neighbours. For three
+particular parameter sets, a simple question has no answer. These are their
+hunt logs.
+</p>
+
+<h2>One question, three shapes</h2>
+
+<p>
+The same object poses three genuinely different questions, and this series
+follows each to the edge of what is known:
+</p>
+
+<div class="card-grid" style="display:grid;gap:1em;margin:1.5em 0">
+    <div class="callout">
+        <div class="callout-title"><a href="https://tonykoval.github.io/hunting-srg37/">SRG(37,18,8,9)</a> — completeness</div>
+        <p>
+        A catalog of $6802$ conference graphs is known. <em>Is it complete,
+        or is there a $6803$rd?</em> The target would be rigid, so symmetry
+        is no help; the hunt is an isomorph-free enumeration of regular
+        two-graphs on $38$ points. <strong>Status:</strong> $&gt;92\%$ of the
+        space proven empty, a hard residual remaining.
+        </p>
+    </div>
+    <div class="callout">
+        <div class="callout-title"><a href="https://tonykoval.github.io/hunting-srg69/">SRG(69,20,7,5)</a> — existence</div>
+        <p>
+        The <em>smallest</em> parameters in Brouwer's table with no known
+        graph and no non-existence proof. <em>Does even one exist?</em>
+        <strong>Status:</strong> no automorphism of any odd order, no Cayley
+        graph; the involution sweep and the rigid case remain.
+        </p>
+    </div>
+    <div class="callout">
+        <div class="callout-title"><a href="https://tonykoval.github.io/hunting-srg99/">SRG(99,14,1,2)</a> — Conway's $\$1000$ problem</div>
+        <p>
+        John Conway's famous $99$-graph: every edge in a unique triangle,
+        every non-edge in a unique quadrilateral. <em>Does it exist?</em>
+        <strong>Status:</strong> orders $11$ and $3$ closed, not Cayley;
+        the order-$7$ door $[1,7^{14}]$ and the rigid core remain.
+        </p>
+    </div>
+</div>
+
+<h2>The shared lesson</h2>
+
+<div class="callout theorem">
+    <div class="callout-title">The iron law</div>
+    <p>
+    All three targets resist every general method for the same reason. A
+    strongly regular graph that is both <strong>large</strong> and
+    <strong>nearly symmetry-free</strong> forces full enumeration cost:
+    symmetry-based methods (orbit matrices, Cayley/PDS, character sums) reach
+    only symmetric graphs, while raw search (SAT, local search, geometric
+    filters) drowns at low symmetry. The two tractable regimes — small, or
+    highly symmetric — are exactly the ones these problems avoid. What is
+    left is slow, sound, isomorph-free enumeration, and the precise map of
+    where the wall stands.
+    </p>
+</div>
+
+<h2>At a glance</h2>
+
+<table>
+    <thead><tr><th>Volume</th><th>$(n,k,\lambda,\mu)$</th><th>Question</th><th>Spectrum</th><th>What is proven</th></tr></thead>
+    <tbody>
+        <tr>
+            <td><a href="https://tonykoval.github.io/hunting-srg37/">SRG(37)</a></td>
+            <td>$(37,18,8,9)$</td>
+            <td>catalog complete?</td>
+            <td>$18,\,\tfrac{-1\pm\sqrt{37}}{2}$</td>
+            <td>search sound; $&gt;92\%$ empty</td>
+        </tr>
+        <tr>
+            <td><a href="https://tonykoval.github.io/hunting-srg69/">SRG(69)</a></td>
+            <td>$(69,20,7,5)$</td>
+            <td>does one exist?</td>
+            <td>$20,\,5^{23},(-3)^{45}$</td>
+            <td>no odd-order aut; not Cayley</td>
+        </tr>
+        <tr>
+            <td><a href="https://tonykoval.github.io/hunting-srg99/">SRG(99)</a></td>
+            <td>$(99,14,1,2)$</td>
+            <td>does one exist? ($\$1000$)</td>
+            <td>$14,\,3^{54},(-4)^{44}$</td>
+            <td>orders 11, 3 closed; not Cayley</td>
+        </tr>
+    </tbody>
+</table>
+
+<h2>How to read</h2>
+
+<p>
+Each volume is a standalone interactive book — plain static HTML, KaTeX for
+the mathematics, live calculators and visualisers, no build step. Open any
+of the three in the sidebar (rendered editions on GitHub Pages; source on
+GitHub). Every result is reproducible: the search engine,
+<a href="https://github.com/tonykoval/orbit-gen"><code>orbit-gen</code></a>,
+and the exact commands are catalogued in each book's <em>Tools &amp;
+Reproducibility</em> chapter.
+</p>
+
+<div class="callout">
+    <div class="callout-title">Two ways every hunt ends</div>
+    <p>
+    For each problem the search is a <strong>decision procedure</strong>: a
+    single valid graph settles it one way (a new graph, a resolved existence,
+    or Conway's prize), and a complete exhaustion settles it the other (a
+    completeness theorem or a non-existence proof). Neither has been reached
+    — yet. That is what makes them worth hunting, and worth writing down.
+    </p>
+</div>
+
+<hr>
+
+<h2>Front matter</h2>
+<p>
+<strong>Author.</strong> Tony Koval, <code>aktealc@gmail.com</code>.
+<br>
+<strong>Engine.</strong> All three hunts run on
+<a href="https://github.com/tonykoval/orbit-gen">github.com/tonykoval/orbit-gen</a>.
+<br>
+<strong>Licence.</strong> Content CC-BY-4.0; code MIT.
+</p>
+
+<p style="margin-top: 3em; text-align: center; font-style: italic; color: var(--muted);">
+<em>Begin with any volume —</em>&nbsp;
+<a href="https://tonykoval.github.io/hunting-srg37/">37</a> ·
+<a href="https://tonykoval.github.io/hunting-srg69/">69</a> ·
+<a href="https://tonykoval.github.io/hunting-srg99/">99</a>
+</p>
+
+</main>
+
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+        onload="BookInit.renderMath()"></script>
+<script src="assets/book.js"></script>
+
+</body>
+</html>
