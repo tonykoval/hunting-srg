@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hunting Strongly Regular Graphs — A Series of Three Hunt Logs</title>
-<meta name="description" content="Three open questions about strongly regular graphs — SRG(37,18,8,9), SRG(69,20,7,5) and Conway's SRG(99,14,1,2) — three shapes of one problem.">
+<meta name="description" content="Three questions about strongly regular graphs — SRG(37,18,8,9), SRG(69,20,7,5) and Conway's SRG(99,14,1,2) — three shapes of one problem. The SRG(69) question was settled on 2026-09-26: no such graph exists.">
 <meta name="author" content="Tony Koval">
 <link rel="stylesheet" href="assets/book.css">
 <link rel="stylesheet" href="assets/print.css" media="print">
@@ -43,8 +43,9 @@
 A <em>strongly regular graph</em> is one of the most rigid objects in
 combinatorics: $n$ vertices, every vertex of degree $k$, every edge in
 $\lambda$ triangles, every non-edge with $\mu$ common neighbours. For three
-particular parameter sets, a simple question has no answer. These are their
-hunt logs.
+particular parameter sets, a simple question had no answer. These are their
+hunt logs. One of them now has its answer: there is no
+$\mathrm{SRG}(69,20,7,5)$.
 </p>
 
 <h2>One question, three shapes</h2>
@@ -68,10 +69,12 @@ follows each to the edge of what is known:
     <div class="callout">
         <div class="callout-title"><a href="https://tonykoval.github.io/hunting-srg69/">SRG(69,20,7,5)</a> — existence</div>
         <p>
-        The <em>smallest</em> parameters in Brouwer's table with no known
-        graph and no non-existence proof. <em>Does even one exist?</em>
-        <strong>Status:</strong> no automorphism of any odd order, no Cayley
-        graph; the involution sweep and the rigid case remain.
+        Once the <em>smallest</em> parameters in Brouwer's table with no
+        known graph and no non-existence proof. <em>Does even one exist?</em>
+        <strong>Status: settled 2026-09-26 — no such graph exists.</strong>
+        A computer-assisted lattice proof that assumes no symmetry, checked
+        by two independent engines, two audits and a review; the write-up is
+        under review and not yet published.
         </p>
     </div>
     <div class="callout">
@@ -100,6 +103,11 @@ follows each to the edge of what is known:
     left is slow, sound, isomorph-free enumeration, and the precise map of
     where the wall stands.
     </p>
+    <p>
+    <em>Postscript (2026-09-26).</em> $\mathrm{SRG}(69,20,7,5)$ was settled
+    without breaking this wall. The proof went around it: it lists the
+    <em>lattices</em> that could hold the graph, not the graphs.
+    </p>
 </div>
 
 <h2>At a glance</h2>
@@ -119,7 +127,7 @@ follows each to the edge of what is known:
             <td>$(69,20,7,5)$</td>
             <td>does one exist?</td>
             <td>$20,\,5^{23},(-3)^{45}$</td>
-            <td>no odd-order aut; not Cayley</td>
+            <td><strong>does not exist</strong> (2026-09-26; write-up under review)</td>
         </tr>
         <tr>
             <td><a href="https://tonykoval.github.io/hunting-srg99/">SRG(99)</a></td>
@@ -149,8 +157,11 @@ Reproducibility</em> chapter.
     For each problem the search is a <strong>decision procedure</strong>: a
     single valid graph settles it one way (a new graph, a resolved existence,
     or Conway's prize), and a complete exhaustion settles it the other (a
-    completeness theorem or a non-existence proof). Neither has been reached
-    — yet. That is what makes them worth hunting, and worth writing down.
+    completeness theorem or a non-existence proof). For
+    $\mathrm{SRG}(69,20,7,5)$ the second ending arrived on 2026-09-26, by a
+    route outside both searches: a lattice proof that no such graph exists.
+    For the other two, neither ending has been reached — yet. That is what
+    makes them worth hunting, and worth writing down.
     </p>
 </div>
 
